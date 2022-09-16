@@ -1,0 +1,90 @@
+*{
+  font-family: 'Mouse Memoirs', sans-serif; 
+   text-align: center;
+   box-sizing: border-box;
+}
+body{
+    background-image: url('cork.jpg');
+}
+#title{
+    font-size: 70px;
+}
+#form{
+    display: flex;
+    justify-content: center;
+    background: url('form.jpg');
+    background-repeat: repeat-y;
+    background-position: center;
+}
+#my_form{
+    margin: 15px;
+    display: grid;
+    grid-gap: 6px;
+    grid-template-columns: 40% 40% 10% 10%;
+    grid-template-rows: 50% 50%;
+}
+textarea{
+    grid-area: 1 / 1 / 2 / 3;
+    overflow-y: scroll;
+}
+#my_submit{
+    background: rgb(248, 242, 127); 
+    grid-area: 1 / 3 / 3 / 4;
+}
+#my_reset{
+    background: rgb(225, 143, 36); 
+    grid-area: 1 / 4 / 3 / 5;
+}
+#task_notes_section{
+    display: flex;
+    flex-wrap: wrap;
+  }
+.task_note{
+    margin: 10px;
+    padding: 10px;
+    padding-top: 25px;
+    height: 250px; 
+    width: 180px;
+    background:  url('note.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 50% 20% 30%;
+    animation:fade_in 2s ;
+}
+@keyframes fade_in {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+.task_note:hover #delete{
+    display:inline;
+}
+#task_text{
+    grid-area:1 / 1 / 2 / 3 ;
+    text-align: center;
+    overflow-y:scroll;  
+}
+#task_date{
+    grid-area:3 / 1 / 4 / 2 ;
+    text-align: left;
+}
+#delete{
+    grid-area:3 / 2 / 4 / 3 ;
+    position:absolute;
+    display: none;
+}
+#today_caution{
+    grid-area: 2/ 1 / 3 / 3 ;
+    color: black;
+    text-decoration: underline;
+}
+#task_text::-webkit-scrollbar ,textarea::-webkit-scrollbar{
+	width: 5px;
+	background-color: transparent;
+}
+#task_text::-webkit-scrollbar-thumb ,textarea::-webkit-scrollbar-thumb{
+	border-radius: 10px;
+	background-color: black;
+}
